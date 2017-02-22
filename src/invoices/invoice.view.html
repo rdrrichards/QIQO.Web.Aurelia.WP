@@ -1,0 +1,42 @@
+<template>
+    <div>${pageTitle}</div>
+    
+    <div if.bind="invoice">
+        <div class="panel panel-primary">
+            <div class="panel-heading" style="font-size:large">
+                Invoice selected ${ invoice.invoiceNumber } for ${ invoice.account.accountName }
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <table class="table">
+                    <thead>
+                    <tr>
+                        <td>Seq.</td>
+                        <td>Product Code</td>
+                        <td>Product Name</td>
+                        <td>Quantity</td>
+                        <td>Item Cost</td>
+                        <td>Line Total</td>
+                        <td>Line Status</td>
+                        <td></td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr repeat.for="invoice_item of invoice.invoiceItems">
+                        <td>${ invoice_item.invoiceItemSeq } </td>
+                        <td>${ invoice_item.productName }</td>
+                        <td>${ invoice_item.productDesc }</td>
+                        <td>${ invoice_item.quantity }</td>
+                        <td>${ invoice_item.invoiceItemPrice }</td>
+                        <td>${ invoice_item.invoiceLineTotal }</td>
+                        <td>${ invoice_item.invoiceItemStatus }</td>                        
+                        <td><a href="#/invoices/edit/invoiceitem/${invoice_item.invoiceItemKey}">Edit</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

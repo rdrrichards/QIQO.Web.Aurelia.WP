@@ -1,0 +1,37 @@
+<template>
+    <div>${pageTitle}</div>
+    <form submit.delegate='save()'>
+        <div class="form-group">
+            <label for="productName">Product Name:</label>
+            <input type="text" class="form-control" id="productName" value.bind="product.productName">
+        </div>
+        <div class="form-group">
+            <label for="productDesc">Product Description:</label>
+            <input type="text" class="form-control" id="productDesc" value.bind="product.productDesc">
+        </div>
+        <div class="form-group">
+            <label for="productShortDesc">Product Short Name:</label>
+            <input type="text" class="form-control" id="productShortDesc" value.bind="product.productShortDesc">
+        </div>
+        <div class="form-group">
+            <label for="productLongDesc">Product Long Name:</label>
+            <input type="text" class="form-control" id="productLongDesc" value.bind="product.productLongDesc">
+        </div>
+        <div class="form-group">
+            <label for="productImagePath">Product Image Path:</label>
+            <input type="text" class="form-control" id="productImagePath" value.bind="product.productImagePath">
+        </div>
+
+        <!--<div>
+            <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" (click)="updateProduct()">Save</button>
+            &nbsp;
+            <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="cancel()">Cancel</button>
+            &nbsp;
+            <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="deleteProduct()">Delete</button>
+            &nbsp;
+            <button class="dashboard-button mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" (click)="addToCart(product)">Add to Cart</button>
+        </div>-->
+        
+  		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</template>

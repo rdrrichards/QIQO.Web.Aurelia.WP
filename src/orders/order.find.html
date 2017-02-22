@@ -1,0 +1,58 @@
+<template>
+    <div class='panel panel-primary'>
+    <div class='panel-heading'>
+        ${pageTitle}
+    </div>
+    
+    <div>
+        <form submit.delegate="find()">
+            <input type="text" value.bind="pattern">
+  		    <button type="submit" class="btn btn-primary">Find</button>
+        </form>
+    </div>
+    
+    <div class='panel-body'>
+        <!--<div if.bind="orders">Loading orders...</div>-->
+        <div if.bind="orders">
+            <div class="panel panel-primary">
+                <div class="panel-body">
+                    <div class="row">
+                        <table class="table">
+                        <thead>
+                        <tr>
+                            <td>Order Number</td>
+                            <td>Account Code</td>
+                            <td>Account Name</td>
+                            <td>Order Entry Date
+                            <td>Order Status</td>
+                            <td>Order Due Date</td>
+                            <td>Order Item Count</td>
+                            <td>Order Value</td>
+                            <td>Sale Rep Name</td>
+                            <td>Account Rep Name</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr repeat.for="order of orders">
+                            <!--<td><a [routerLink]="['AccountOrderDetail', {oid: order.orderKey, id: order.account.accountKey}]" href="">{{order.orderNumber}}</a></td>-->
+                            <td><a href="#/orders/${order.orderKey}">${ order.orderNumber }</a></td>
+                            <td>${ order.orderNumber }</a></td>
+                            <td>${ order.account.accountCode }</td>
+                            <td>${ order.account.accountName }</td>
+                            <td>${ order.orderEntryDate }</td>
+                            <td>${ order.orderStatus }</td>
+                            <td>${ order.orderDeliverByDate }</td>
+                            <td>${ order.orderItemCount }</td>
+                            <td>${ order.orderValueSum }</td>
+                            <td>${ order.salesRepName }</td>
+                            <td>${ order.accountRepName }</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
